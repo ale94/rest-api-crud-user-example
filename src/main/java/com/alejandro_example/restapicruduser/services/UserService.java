@@ -30,10 +30,18 @@ public class UserService {
 
     public UserEntity update(Long id, UserEntity user) {
         UserEntity newUser = this.getId(id);
-        newUser.setName(user.getName());
-        newUser.setUsername(user.getUsername());
-        newUser.setEmail(user.getEmail());
-        newUser.setPhone(user.getPhone());
+        if (user.getName() != null) {
+            newUser.setName(user.getName());
+        }
+        if (user.getUsername() != null) {
+            newUser.setUsername(user.getUsername());
+        }
+        if (user.getEmail() != null) {
+            newUser.setEmail(user.getEmail());
+        }
+        if (user.getPhone() != null) {
+            newUser.setPhone(user.getPhone());
+        }
         return userRepository.save(newUser);
     }
 

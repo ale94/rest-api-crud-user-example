@@ -20,7 +20,7 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @GetMapping("/users/all")
+    @GetMapping("/users")
     public List<UserEntity> getAll() {
         return userService.getAll();
     }
@@ -37,8 +37,8 @@ public class UserController {
 
     @DeleteMapping("/users/{id}")
     public String delete(@PathVariable Long id) {
-        userService.delete(id);
-        return "User deleted successfully";
+        var user = userService.getId(id);
+        return "User " + user.getId() + " deleted successfully";
     }
 
     @PutMapping("/users/{id}")
