@@ -51,6 +51,21 @@ Esta es una API REST básica para administrar usuarios. Permite realizar operaci
 ]
 ```
 
+### Obtener usuario por ID
+
+- **URL**: `/api/users/:id`
+- **Método**: GET
+- **Cuerpo de la Solicitud:**
+
+```json
+{
+    "name": "Donny",
+    "username": "don8",
+    "email": "donny@gmail.com",
+    "phone": "63215896"
+}
+```
+
 ### Crear usuario
 
 - **URL**: `/api/users`
